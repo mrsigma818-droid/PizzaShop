@@ -3,64 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pikza Shop</title>
+
+    <title>PizzaShop | پیتزا شاپ</title>
 
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: #111;
+            background: #0f0f0f;
             color: white;
-            text-align: center;
         }
 
         header {
-            padding: 40px 20px;
-            background: #222;
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #1f1f1f, #111);
+        }
+
+        .logo {
+            font-size: 80px;
         }
 
         h1 {
-            font-size: 45px;
+            font-size: 48px;
+            margin: 10px;
         }
 
-        .pizza {
-            font-size: 90px;
-        }
-
-        .button {
-            display: inline-block;
-            padding: 15px 30px;
-            background: #e63946;
-            color: white;
-            text-decoration: none;
-            border-radius: 10px;
+        header p {
             font-size: 20px;
+            color: #ccc;
         }
 
-        section {
+        .products {
             padding: 40px 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .products h2 {
+            text-align: center;
+            font-size: 35px;
+            margin-bottom: 35px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
         }
 
         .product {
-            background: #222;
-            margin: 20px auto;
-            padding: 20px;
-            border-radius: 15px;
-            max-width: 350px;
+            background: #1d1d1d;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+        }
+
+        .icon {
+            font-size: 65px;
         }
 
         .product h3 {
             font-size: 25px;
         }
 
-        .price {
-            color: #ff5964;
-            font-size: 22px;
+        .product p {
+            color: #ccc;
+            line-height: 1.8;
+        }
+
+        .buy {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 13px 28px;
+            background: #e63946;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+        .buy:hover {
+            background: #ff5964;
         }
 
         footer {
-            padding: 20px;
-            background: #222;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+            background: #1d1d1d;
             color: #aaa;
         }
     </style>
@@ -69,37 +101,77 @@
 <body>
 
 <header>
-    <div class="pizza">🍕</div>
-    <h1>🍕 Pikza Shop</h1>
-    <p>به پیکزا شاپ خوش آمدید!</p>
-
-    <a class="button" href="#products">مشاهده محصولات</a>
+    <div class="logo">🍕</div>
+    <h1>PizzaShop</h1>
+    <p>پیتزا شاپ | فروش خدمات و محصولات</p>
 </header>
 
-<section id="products">
-    <h2>🍕 محصولات ما</h2>
+<section class="products">
 
-    <div class="product">
-        <h3>پیتزا پپرونی 🍕</h3>
-        <p>پیتزای خوشمزه با پپرونی</p>
-        <div class="price">۱۵۰,۰۰۰ تومان</div>
+    <h2>🛒 محصولات</h2>
+
+    <div class="product-grid">
+
+        <div class="product">
+            <div class="icon">⭐</div>
+            <h3>اکانت پرمیوم</h3>
+            <p>اکانت پرمیوم با کیفیت</p>
+            <a class="buy" href="https://rubika.ir/its_ArdavanReal" target="_blank">
+                🛒 خرید
+            </a>
+        </div>
+
+        <div class="product">
+            <div class="icon">🖼️</div>
+            <h3>تامنیل</h3>
+            <p>طراحی تامنیل حرفه‌ای برای ویدیوها</p>
+            <a class="buy" href="https://rubika.ir/its_ArdavanReal" target="_blank">
+                🛒 خرید
+            </a>
+        </div>
+
+        <div class="product">
+            <div class="icon">✂️</div>
+            <h3>ادیت</h3>
+            <p>ادیت حرفه‌ای ویدیو</p>
+            <a class="buy" href="https://rubika.ir/its_ArdavanReal" target="_blank">
+                🛒 خرید
+            </a>
+        </div>
+
+        <div class="product">
+            <div class="icon">🧥</div>
+            <h3>OptiFine Cape</h3>
+            <p>کیپ OptiFine برای ماینکرفت</p>
+            <a class="buy" href="https://rubika.ir/its_ArdavanReal" target="_blank">
+                🛒 خرید
+            </a>
+        </div>
+
+        <div class="product">
+            <div class="icon">🟩</div>
+            <h3>Minecraft Cape</h3>
+            <p>کیپ‌های ماینکرفتی</p>
+            <a class="buy" href="https://rubika.ir/its_ArdavanReal" target="_blank">
+                🛒 خرید
+            </a>
+        </div>
+
+        <div class="product">
+            <div class="icon">⚔️</div>
+            <h3>Minecraft Items</h3>
+            <p>محصولات و آیتم‌های ماینکرفتی</p>
+            <a class="buy" href="https://rubika.ir/its_ArdavanReal" target="_blank">
+                🛒 خرید
+            </a>
+        </div>
+
     </div>
 
-    <div class="product">
-        <h3>پیتزا مخصوص 🍕</h3>
-        <p>پیتزای مخصوص پیکزا شاپ</p>
-        <div class="price">۱۸۰,۰۰۰ تومان</div>
-    </div>
-
-    <div class="product">
-        <h3>پیتزا مرغ 🍕</h3>
-        <p>پیتزا با مرغ و پنیر</p>
-        <div class="price">۱۷۰,۰۰۰ تومان</div>
-    </div>
 </section>
 
 <footer>
-    © 2026 Pikza Shop
+    © 2026 PizzaShop | پیتزا شاپ
 </footer>
 
 </body>
