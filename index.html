@@ -21,16 +21,10 @@
 
         h1 {
             font-size: 45px;
-            margin: 10px;
-        }
-
-        p {
-            font-size: 20px;
         }
 
         .pizza {
             font-size: 90px;
-            margin: 20px;
         }
 
         .button {
@@ -41,15 +35,27 @@
             text-decoration: none;
             border-radius: 10px;
             font-size: 20px;
-            margin-top: 20px;
-        }
-
-        .button:hover {
-            background: #ff5964;
         }
 
         section {
             padding: 40px 20px;
+        }
+
+        .product {
+            background: #222;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 15px;
+            max-width: 350px;
+        }
+
+        .product h3 {
+            font-size: 25px;
+        }
+
+        .price {
+            color: #ff5964;
+            font-size: 22px;
         }
 
         footer {
@@ -62,21 +68,39 @@
 
 <body>
 
-    <header>
-        <div class="pizza">🍕</div>
-        <h1>🍕 Pizza Shop</h1>
-        <p>به پیتزا شاپ خوش آمدید!</p>
-        <a class="button" href="#">مشاهده محصولات</a>
-    </header>
+<header>
+    <div class="pizza">🍕</div>
+    <h1>🍕 Pikza Shop</h1>
+    <p>به پیکزا شاپ خوش آمدید!</p>
 
-    <section>
-        <h2>پیتزاهای خوشمزه 🍕</h2>
-        <p>به‌زودی بهترین پیتزاها و محصولات اینجا قرار می‌گیرند.</p>
-    </section>
+    <a class="button" href="#products">مشاهده محصولات</a>
+</header>
 
-    <footer>
-        © 2026 Pikza Shop
-    </footer>
+<section id="products">
+    <h2>🍕 محصولات ما</h2>
+
+    <div class="product">
+        <h3>پیتزا پپرونی 🍕</h3>
+        <p>پیتزای خوشمزه با پپرونی</p>
+        <div class="price">۱۵۰,۰۰۰ تومان</div>
+    </div>
+
+    <div class="product">
+        <h3>پیتزا مخصوص 🍕</h3>
+        <p>پیتزای مخصوص پیکزا شاپ</p>
+        <div class="price">۱۸۰,۰۰۰ تومان</div>
+    </div>
+
+    <div class="product">
+        <h3>پیتزا مرغ 🍕</h3>
+        <p>پیتزا با مرغ و پنیر</p>
+        <div class="price">۱۷۰,۰۰۰ تومان</div>
+    </div>
+</section>
+
+<footer>
+    © 2026 Pikza Shop
+</footer>
 
 </body>
 </html>
