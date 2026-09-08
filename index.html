@@ -1,90 +1,454 @@
-- پشتیبانی -->
-        <a href="#" onclick="support(); return false;">پشتیبانی</a>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>🍕 pizzaShop | فروشگاه گیمینگ</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Tahoma,Arial,sans-serif;
+    background:#070707;
+    color:white;
+}
+
+/* HEADER */
+header{
+    position:sticky;
+    top:0;
+    z-index:100;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 7%;
+    background:rgba(10,10,10,.94);
+    border-bottom:1px solid #292929;
+    backdrop-filter:blur(15px);
+}
+
+.logo{
+    font-size:25px;
+    font-weight:bold;
+    color:#ff9d00;
+}
+
+.logo span{
+    color:white;
+}
+
+nav a{
+    color:#aaa;
+    text-decoration:none;
+    margin:0 10px;
+    transition:.2s;
+    cursor:pointer;
+}
+
+nav a:hover{
+    color:#ff9d00;
+}
+
+/* HERO */
+.hero{
+    padding:90px 7%;
+    text-align:center;
+    background:
+    radial-gradient(circle at center,#432900 0%,#171717 35%,#070707 75%);
+}
+
+.hero h1{
+    font-size:48px;
+    margin-bottom:18px;
+}
+
+.hero h1 span{
+    color:#ff9d00;
+}
+
+.hero p{
+    color:#aaa;
+    font-size:17px;
+    line-height:2;
+}
+
+/* PRODUCTS */
+.products{
+    padding:55px 7%;
+}
+
+.products h2{
+    text-align:center;
+    font-size:31px;
+    margin-bottom:40px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:24px;
+}
+
+.card{
+    background:linear-gradient(145deg,#151515,#0f0f0f);
+    border:1px solid #292929;
+    border-radius:22px;
+    padding:20px;
+    transition:.3s;
+    overflow:hidden;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    border-color:#ff9d00;
+    box-shadow:0 15px 45px #000;
+}
+
+.icon{
+    height:145px;
+    border-radius:17px;
+    background:
+    radial-gradient(circle,#3b2605,#171717 65%);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:65px;
+    margin-bottom:20px;
+}
+
+.card h3{
+    font-size:20px;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#999;
+    font-size:13px;
+    line-height:1.9;
+    min-height:50px;
+}
+
+.price{
+    color:#ffb52e;
+    font-size:20px;
+    font-weight:bold;
+    margin:20px 0;
+}
+
+.buy{
+    width:100%;
+    border:0;
+    border-radius:12px;
+    padding:14px;
+    background:#ff9d00;
+    color:#111;
+    font-size:15px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.buy:hover{
+    background:#ffc04d;
+    transform:scale(1.03);
+}
+
+/* FOOTER */
+footer{
+    margin-top:30px;
+    padding:35px;
+    text-align:center;
+    color:#777;
+    border-top:1px solid #222;
+}
+
+/* MODAL */
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    z-index:1000;
+    background:rgba(0,0,0,.8);
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.modal-box{
+    width:min(440px,100%);
+    background:#151515;
+    border:1px solid #3a3a3a;
+    border-radius:24px;
+    padding:30px;
+    text-align:center;
+    box-shadow:0 25px 90px #000;
+    animation:popup .25s ease;
+}
+
+@keyframes popup{
+    from{
+        opacity:0;
+        transform:scale(.8) translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1) translateY(0);
+    }
+}
+
+.big{
+    font-size:55px;
+    margin-bottom:10px;
+}
+
+.modal-box h2{
+    color:#ff9d00;
+    margin-bottom:15px;
+}
+
+.modal-box p{
+    color:#bbb;
+    line-height:2;
+    margin-bottom:20px;
+}
+
+.rubika{
+    display:block;
+    direction:ltr;
+    background:#222;
+    border:1px solid #333;
+    color:#ffb52e;
+    padding:14px;
+    border-radius:13px;
+    font-weight:bold;
+    font-size:18px;
+    margin-bottom:20px;
+}
+
+.rubika:hover{
+    border-color:#ff9d00;
+}
+
+.close{
+    width:100%;
+    border:0;
+    padding:12px;
+    border-radius:12px;
+    background:#292929;
+    color:white;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.close:hover{
+    background:#3a3a3a;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+
+    header{
+        padding:15px 5%;
+    }
+
+    .logo{
+        font-size:20px;
+    }
+
+    nav a{
+        margin:0 4px;
+        font-size:12px;
+    }
+
+    .hero{
+        padding:65px 5%;
+    }
+
+    .hero h1{
+        font-size:33px;
+    }
+
+    .hero p{
+        font-size:14px;
+    }
+
+    .products{
+        padding:40px 5%;
+    }
+
+    .products h2{
+        font-size:25px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+
+    <div class="logo">
+        🍕 pizza<span>Shop</span>
+    </div>
+
+    <nav>
+        <a href="#">خانه</a>
+        <a href="#products">محصولات</a>
+        <a href="#" onclick="openSupport(event)">پشتیبانی</a>
     </nav>
+
 </header>
 
+
+<!-- HERO -->
 <section class="hero">
-    <h1>به <span>pizzaShop</span> خوش آمدید 🍕</h1>
-    <p>فروشگاه حرفه‌ای محصولات گیمینگ و خدمات ماینکرفت</p>
+
+    <h1>
+        به <span>pizzaShop</span> خوش آمدید 🍕
+    </h1>
+
+    <p>
+        فروشگاه حرفه‌ای محصولات گیمینگ،
+        ماینکرفت و خدمات ادیت
+    </p>
+
 </section>
 
+
+<!-- PRODUCTS -->
 <section class="products" id="products">
 
     <h2>🔥 محصولات فروشگاه</h2>
 
     <div class="grid">
 
+
+        <!-- پول دونات SMP -->
+        <div class="card">
+
+            <div class="icon">💰</div>
+
+            <h3>پول دونات SMP</h3>
+
+            <p>
+                دریافت پول برای خرید و استفاده
+                در سرور Donut SMP
+            </p>
+
+            <div class="price">
+                قیمت: توافقی
+            </div>
+
+            <button class="buy"
+                onclick="buyProduct('پول دونات SMP')">
+                🛒 خرید محصول
+            </button>
+
+        </div>
+
+
         <!-- اکانت پرمیوم -->
         <div class="card">
-            <div class="icon">👑</div>
-            <h3>اکانت پرمیوم</h3>
-            <p>اکانت پرمیوم برای تجربه بهتر و امکانات بیشتر</p>
 
-            <div class="price">۱,۰۰۰,۰۰۰ تومان</div>
+            <div class="icon">👑</div>
+
+            <h3>اکانت پرمیوم</h3>
+
+            <p>
+                اکانت پرمیوم برای تجربه بهتر
+                و امکانات بیشتر
+            </p>
+
+            <div class="price">
+                ۱۵۰,۰۰۰ تومان
+            </div>
 
             <button class="buy"
                 onclick="buyProduct('اکانت پرمیوم')">
                 🛒 خرید محصول
             </button>
+
         </div>
 
-        <!-- ادیت تامنیل -->
-        <div class="card">
-            <div class="icon">🎨</div>
-            <h3>ادیت تامنیل</h3>
-            <p>طراحی تامنیل حرفه‌ای برای یوتیوب و آپارات</p>
-
-            <div class="price">۸۰,۰۰۰ تومان</div>
-
-            <button class="buy"
-                onclick="buyProduct('ادیت تامنیل')">
-                🛒 خرید محصول
-            </button>
-        </div>
 
         <!-- Cape اپتیفاین -->
         <div class="card">
-            <div class="icon">🦸</div>
-            <h3>Cape اپتیفاین</h3>
-            <p>کیپ مخصوص Minecraft با طراحی جذاب</p>
 
-            <div class="price">۱۲۰,۰۰۰ تومان</div>
+            <div class="icon">🦸</div>
+
+            <h3>Cape اپتیفاین</h3>
+
+            <p>
+                کیپ جذاب مخصوص Minecraft
+                برای ظاهر بهتر کاراکتر
+            </p>
+
+            <div class="price">
+                ۱۲۰,۰۰۰ تومان
+            </div>
 
             <button class="buy"
                 onclick="buyProduct('Cape اپتیفاین')">
                 🛒 خرید محصول
             </button>
+
         </div>
 
-        <!-- Cape اختصاصی -->
-        <div class="card">
-            <div class="icon">🔥</div>
-            <h3>Cape اختصاصی</h3>
-            <p>طراحی کیپ اختصاصی برای Minecraft</p>
 
-            <div class="price">۲۰۰,۰۰۰ تومان</div>
+        <!-- ادیت و تامنیل -->
+        <div class="card">
+
+            <div class="icon">🎨</div>
+
+            <h3>ادیت و تامنیل</h3>
+
+            <p>
+                طراحی و ادیت حرفه‌ای تامنیل
+                برای یوتیوب و آپارات
+            </p>
+
+            <div class="price">
+                ۸۰,۰۰۰ تومان
+            </div>
 
             <button class="buy"
-                onclick="buyProduct('Cape اختصاصی')">
+                onclick="buyProduct('ادیت و تامنیل')">
                 🛒 خرید محصول
             </button>
+
         </div>
 
     </div>
+
 </section>
 
+
+<!-- FOOTER -->
 <footer>
-    🍕 © 2026 pizzaShop — تمامی حقوق محفوظ است
+
+    🍕 © 2026 pizzaShop
+    <br><br>
+    تمامی حقوق محفوظ است
+
 </footer>
 
-<!-- پنجره خرید و پشتیبانی -->
+
+<!-- BUY MODAL -->
 <div class="modal" id="buyModal">
 
     <div class="modal-box">
 
-        <div class="big" id="modalIcon">🛒</div>
+        <div class="big">🛒</div>
 
-        <h2 id="modalTitle">روش خرید</h2>
+        <h2>روش خرید</h2>
 
         <p id="productMessage">
             برای خرید محصول به آیدی روبیکا پیام دهید.
@@ -102,39 +466,50 @@
 
 </div>
 
+
+<!-- SUPPORT MODAL -->
+<div class="modal" id="supportModal">
+
+    <div class="modal-box">
+
+        <div class="big">🎧</div>
+
+        <h2>پشتیبانی pizzaShop</h2>
+
+        <p>
+            اگر سوالی دارید یا برای خرید محصول
+            نیاز به راهنمایی دارید، از طریق
+            روبیکا با ما در ارتباط باشید.
+        </p>
+
+        <div class="rubika">
+            @its_ArdavanReal
+        </div>
+
+        <button class="close" onclick="closeSupport()">
+            بستن
+        </button>
+
+    </div>
+
+</div>
+
+
 <script>
 
+/* خرید محصول */
 function buyProduct(product){
-
-    document.getElementById("modalIcon").innerHTML = "🛒";
-
-    document.getElementById("modalTitle").innerHTML =
-        "روش خرید";
 
     document.getElementById("productMessage").innerHTML =
         "برای خرید <b style='color:#ffb52e'>" +
         product +
-        "</b> به آیدی روبیکا زیر پیام بدهید:";
+        "</b> به آیدی روبیکا زیر پیام دهید:";
 
     document.getElementById("buyModal").style.display = "flex";
 }
 
 
-/* پشتیبانی */
-function support(){
-
-    document.getElementById("modalIcon").innerHTML = "🛠️";
-
-    document.getElementById("modalTitle").innerHTML =
-        "پشتیبانی";
-
-    document.getElementById("productMessage").innerHTML =
-        "جهت پشتیبانی به این آیدی در روبیکا پیام دهید:";
-
-    document.getElementById("buyModal").style.display = "flex";
-}
-
-
+/* بستن پنجره خرید */
 function closeModal(){
 
     document.getElementById("buyModal").style.display = "none";
@@ -142,12 +517,42 @@ function closeModal(){
 }
 
 
+/* باز کردن پشتیبانی */
+function openSupport(event){
+
+    event.preventDefault();
+
+    document.getElementById("supportModal").style.display = "flex";
+
+
+
+/* بستن پشتیبانی */
+function closeSupport(){
+
+    document.getElementById("supportModal").style.display = "none";
+
+}
+
+
+/* بستن با کلیک بیرون */
 window.onclick = function(event){
 
-    const modal = document.getElementById("buyModal");
+    const buyModal =
+        document.getElementById("buyModal");
 
-    if(event.target === modal){
+    const supportModal =
+        document.getElementById("supportModal");
+
+    if(event.target === buyModal){
+
         closeModal();
+
+    }
+
+    if(event.target === supportModal){
+
+        closeSupport();
+
     }
 
 }
@@ -155,4 +560,4 @@ window.onclick = function(event){
 </script>
 
 </body>
-</html>
+<
