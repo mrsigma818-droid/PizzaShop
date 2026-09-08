@@ -4,199 +4,466 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>🍕 pizzaShop | فروشگاه گیمینگ</title>
+<title>pizzaShop</title>
 
 <style>
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
+* {
+    box-sizing: border-box;
 }
 
-body{
-    font-family:Tahoma,Arial,sans-serif;
-    background:#070707;
-    color:white;
+body {
+    margin: 0;
+    font-family: Tahoma, Arial, sans-serif;
+    background: #0b0b0b;
+    color: white;
 }
 
-header{
-    position:sticky;
-    top:0;
-    z-index:100;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:18px 7%;
-    background:rgba(10,10,10,.94);
-    border-bottom:1px solid #292929;
-    backdrop-filter:blur(15px);
+/* Header */
+header {
+    background: #111;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #333;
 }
 
-.logo{
-    font-size:25px;
-    font-weight:bold;
-    color:#ff9d00;
+.logo {
+    color: #ff9900;
+    font-size: 25px;
+    font-weight: bold;
 }
 
-.logo span{
-    color:white;
+.logo span {
+    color: white;
 }
 
-nav a{
-    color:#aaa;
-    text-decoration:none;
-    margin:0 10px;
-    transition:.2s;
-    cursor:pointer;
+nav a {
+    color: #ddd;
+    text-decoration: none;
+    margin: 0 8px;
+    cursor: pointer;
 }
 
-nav a:hover{
-    color:#ff9d00;
+nav a:hover {
+    color: #ff9900;
 }
 
-.hero{
-    padding:90px 7%;
-    text-align:center;
-    background:
-    radial-gradient(circle at center,#432900 0%,#171717 35%,#070707 75%);
+/* Hero */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #241500, #0b0b0b);
 }
 
-.hero h1{
-    font-size:48px;
-    margin-bottom:18px;
+.hero h1 {
+    font-size: 42px;
+    margin: 0 0 15px;
 }
 
-.hero h1 span{
-    color:#ff9d00;
+.hero h1 span {
+    color: #ff9900;
 }
 
-.hero p{
-    color:#aaa;
-    font-size:17px;
-    line-height:2;
+.hero p {
+    color: #aaa;
+    font-size: 16px;
 }
 
-.products{
-    padding:55px 7%;
+/* Products */
+.products {
+    padding: 50px 7%;
 }
 
-.products h2{
-    text-align:center;
-    font-size:31px;
-    margin-bottom:40px;
+.products h2 {
+    text-align: center;
+    margin-bottom: 35px;
 }
 
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-    gap:24px;
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
 }
 
-.card{
-    background:linear-gradient(145deg,#151515,#0f0f0f);
-    border:1px solid #292929;
-    border-radius:22px;
-    padding:20px;
-    transition:.3s;
-    overflow:hidden;
+.card {
+    background: #151515;
+    border: 1px solid #333;
+    border-radius: 15px;
+    padding: 20px;
+    transition: 0.2s;
 }
 
-.card:hover{
-    transform:translateY(-8px);
-    border-color:#ff9d00;
-    box-shadow:0 15px 45px #000;
+.card:hover {
+    border-color: #ff9900;
+    transform: translateY(-5px);
 }
 
-.icon{
-    height:145px;
-    border-radius:17px;
-    background:
-    radial-gradient(circle,#3b2605,#171717 65%);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:65px;
-    margin-bottom:20px;
+.icon {
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #222;
+    border-radius: 12px;
+    font-size: 60px;
+    margin-bottom: 18px;
 }
 
-.card h3{
-    font-size:20px;
-    margin-bottom:10px;
+.card h3 {
+    margin: 10px 0;
 }
 
-.card p{
-    color:#999;
-    font-size:13px;
-    line-height:1.9;
-    min-height:50px;
+.card p {
+    color: #999;
+    font-size: 13px;
+    line-height: 1.8;
+    min-height: 45px;
 }
 
-.price{
-    color:#ffb52e;
-    font-size:20px;
-    font-weight:bold;
-    margin:20px 0;
+.price {
+    color: #ffb52e;
+    font-size: 19px;
+    font-weight: bold;
+    margin: 18px 0;
 }
 
-.buy{
-    width:100%;
-    border:0;
-    border-radius:12px;
-    padding:14px;
-    background:#ff9d00;
-    color:#111;
-    font-size:15px;
-    font-weight:bold;
-    cursor:pointer;
-    transition:.2s;
+.buy {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 10px;
+    background: #ff9900;
+    color: #111;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-.buy:hover{
-    background:#ffc04d;
-    transform:scale(1.03);
+.buy:hover {
+    background: #ffb52e;
 }
 
-footer{
-    margin-top:30px;
-    padding:35px;
-    text-align:center;
-    color:#777;
-    border-top:1px solid #222;
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #777;
+    border-top: 1px solid #292929;
 }
 
-.modal{
-    display:none;
-    position:fixed;
-    inset:0;
-    z-index:1000;
-    background:rgba(0,0,0,.8);
-    align-items:center;
-    justify-content:center;
-    padding:20px;
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
 
-.modal-box{
-    width:min(440px,100%);
-    background:#151515;
-    border:1px solid #3a3a3a;
-    border-radius:24px;
-    padding:30px;
-    text-align:center;
-    box-shadow:0 25px 90px #000;
-    animation:popup .25s ease;
+.modal-box {
+    width: 100%;
+    max-width: 400px;
+    background: #171717;
+    border: 1px solid #444;
+    border-radius: 18px;
+    padding: 30px;
+    text-align: center;
 }
 
-@keyframes popup{
-    from{
-        opacity:0;
-        transform:scale(.8) translateY(20px);
+.modal-box h2 {
+    color: #ff9900;
+}
+
+.modal-box p {
+    color: #bbb;
+    line-height: 2;
+}
+
+.rubika {
+    margin: 20px 0;
+    padding: 14px;
+    background: #222;
+    border-radius: 10px;
+    color: #ffb52e;
+    font-weight: bold;
+    direction: ltr;
+}
+
+.close {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: #333;
+    color: white;
+    cursor: pointer;
+}
+
+.close:hover {
+    background: #444;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    header {
+        padding: 15px;
     }
 
-    to{
-        opacity:1;
-        transform:scale(1) translateY(0);
+    .logo {
+        font-size: 20px;
     }
+
+    nav a {
+        font-size: 12px;
+        margin: 0 3px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        🍕 pizza<span>Shop</span>
+    </div>
+
+    <nav>
+        <a href="#">خانه</a>
+        <a href="#products">محصولات</a>
+        <a href="#" onclick="support(); return false;">پشتیبانی</a>
+    </nav>
+
+</header>
+
+
+<section class="hero">
+
+    <h1>
+        به <span>pizzaShop</span> خوش آمدید 🍕
+    </h1>
+
+    <p>
+        فروشگاه محصولات گیمینگ و خدمات ماینکرفت
+    </p>
+
+</section>
+
+
+<section class="products" id="products">
+
+    <h2>🔥 محصولات فروشگاه</h2>
+
+    <div class="grid">
+
+        <div class="card">
+
+            <div class="icon">💰</div>
+
+            <h3>پول دونات SMP</h3>
+
+            <p>
+                پول دونات SMP برای استفاده در سرور
+            </p>
+
+            <div class="price">
+                قیمت: توافقی
+            </div>
+
+            <button class="buy"
+                onclick="buy('پول دونات SMP')">
+                🛒 خرید
+            </button>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">👑</div>
+
+            <h3>اکانت پرمیوم</h3>
+
+            <p>
+                اکانت پرمیوم برای تجربه بهتر و امکانات بیشتر
+            </p>
+
+            <div class="price">
+                ۱,۰۰۰,۰۰۰ تومان
+            </div>
+
+            <button class="buy"
+                onclick="buy('اکانت پرمیوم')">
+                🛒 خرید
+            </button>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">🦸</div>
+
+            <h3>Cape اپتیفاین</h3>
+
+            <p>
+                کیپ مخصوص Minecraft
+            </p>
+
+            <div class="price">
+                ۱۲۰,۰۰۰ تومان
+            </div>
+
+            <button class="buy"
+                onclick="buy('Cape اپتیفاین')">
+                🛒 خرید
+            </button>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">🎨</div>
+
+            <h3>ادیت و تامنیل</h3>
+
+            <p>
+                طراحی و ادیت تامنیل برای یوتیوب و آپارات
+            </p>
+
+            <div class="price">
+                ۸۰,۰۰۰ تومان
+            </div>
+
+            <button class="buy"
+                onclick="buy('ادیت و تامنیل')">
+                🛒 خرید
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    🍕 © 2026 pizzaShop
+    <br>
+    تمامی حقوق محفوظ است
+
+</footer>
+
+
+<!-- Buy Modal -->
+
+<div class="modal" id="buyModal">
+
+    <div class="modal-box">
+
+        <h2>🛒 خرید محصول</h2>
+
+        <p id="buyText"></p>
+
+        <div class="rubika">
+            @its_ArdavanReal
+        </div>
+
+        <button class="close" onclick="closeBuy()">
+            بستن
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- Support Modal -->
+
+<div class="modal" id="supportModal">
+
+    <div class="modal-box">
+
+        <h2>🎧 پشتیبانی</h2>
+
+        <p>
+            برای پشتیبانی و راهنمایی درباره محصولات
+            به آیدی روبیکا زیر پیام دهید.
+        </p>
+
+        <div class="rubika">
+            @its_ArdavanReal
+        </div>
+
+        <button class="close" onclick="closeSupport()">
+            بستن
+        </button>
+
+    </div>
+
+</div>
+
+
+<script>
+
+function buy(product) {
+
+    document.getElementById("buyText").innerHTML =
+        "برای خرید <b>" + product +
+        "</b> به آیدی روبیکا زیر پیام دهید:";
+
+    document.getElementById("buyModal").style.display = "flex";
 }
 
-.big{
-    font-size:
+
+function closeBuy() {
+
+    document.getElementById("buyModal").style.display = "none";
+
+}
+
+
+function support() {
+
+    document.getElementById("supportModal").style.display = "flex";
+
+}
+
+
+function closeSupport() {
+
+    document.getElementById("supportModal").style.display = "none";
+
+}
+
+
+window.onclick = function(event) {
+
+    if (event.target === document.getElementById("buyModal")) {
+        closeBuy();
+    }
+
+    if (event.target === document.getElementById("supportModal")) {
+        closeSupport();
+    }
+
+};
+
+</script>
+
+</body>
+</html>
