@@ -1,4 +1,47 @@
-document.getElementById("buyModal").style.display = "none";
+<div class="modal-box">
+
+        <h2>
+            🎧 پشتیبانی
+        </h2>
+
+        <p>
+            برای پشتیبانی و راهنمایی درباره محصولات
+            به آیدی روبیکا زیر پیام دهید.
+        </p>
+
+        <div class="rubika">
+            @its_ArdavanReal
+        </div>
+
+        <button class="close"
+                onclick="closeSupport()">
+
+            بستن
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<script>
+
+function buy(product) {
+
+    document.getElementById("buyText").innerHTML =
+        "برای خرید <b>" +
+        product +
+        "</b> به آیدی روبیکا زیر پیام دهید:";
+
+    document.getElementById("buyModal").style.display = "flex";
+
+}
+
+
+function closeBuy() {
+
+    document.getElementById("buyModal").style.display = "none";
 
 }
 
@@ -19,17 +62,29 @@ function closeSupport() {
 
 window.onclick = function(event) {
 
-    if (event.target === document.getElementById("buyModal")) {
+    if (
+        event.target ===
+        document.getElementById("buyModal")
+    ) {
+
         closeBuy();
+
     }
 
-    if (event.target === document.getElementById("supportModal")) {
+
+    if (
+        event.target ===
+        document.getElementById("supportModal")
+    ) {
+
         closeSupport();
+
     }
 
 };
 
 </script>
+
 
 </body>
 </html>
